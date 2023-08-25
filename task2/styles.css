@@ -1,0 +1,207 @@
+
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 30vh;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.interactive-section {
+    margin-bottom: 40px;
+}
+
+.interactive-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.interactive-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.slider {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 10px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+input:checked + .slider.round:before {
+    background-color: #007bff;
+}
+
+
+.pseudo-elements-section {
+    margin-bottom: 40px;
+}
+
+.pseudo-element-box {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.pseudo-element-box::before, .pseudo-element-box::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.pseudo-element-box::before {
+    top: -15px;
+    left: 10px;
+}
+
+.pseudo-element-box::after {
+    bottom: -15px;
+    right: 10px;
+}
+
+.pseudo-element-box:hover {
+    transform: scale(1.1);
+}
+
+.pseudo-element-box:hover::before, .pseudo-element-box:hover::after {
+    transform: rotate(135deg);
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.card-front {
+    background-color: #f9f9f9;
+}
+
+.card-back {
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+.cursor-area {
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.image-area {
+    cursor: wait; /* Use the pointer cursor style */
+}
+
+.color-changeable {
+    transition: background-color 0.3s ease;
+}
+
+.color-changed {
+    background-color: #f00; 
+}
+
+footer {
+    text-align: center;
+    background-color: #555;
+    color: white;
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

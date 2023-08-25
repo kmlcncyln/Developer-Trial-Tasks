@@ -1,0 +1,117 @@
+
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+.gradient-box {
+    background: linear-gradient(45deg, #f06, #2ae);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.box-shadow-effect {
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+
+.hover-effects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+.hover-button {
+    background-color: var(--primary-color);
+    color: pink;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    border-radius: 5px;
+    display: flex; 
+    align-items: center; 
+}
+
+.hover-button i {
+    margin-right: 8px; 
+}
+
+.hover-button:hover {
+    background-color: var(--secondary-color);
+    color: yellow; 
+}
+
+
+.hover-effect-button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.hover-effect-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.hover-effect-image {
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.hover-effect-image:hover {
+    transform: scale(1.05);
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.animated-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.icon-container i {
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.icon-container i:hover {
+    transform: rotate(360deg);
+    color: var(--primary-color);
+}
