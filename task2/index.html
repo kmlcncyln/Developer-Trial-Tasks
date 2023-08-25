@@ -68,52 +68,45 @@
     </footer>
     
     <script>
-        const colorSlides = document.querySelectorAll('.color-slide');
-        const leftArrow = document.querySelector('.left-arrow');
-        const rightArrow = document.querySelector('.right-arrow');
-        let currentIndex = 0;
-        let autoChangeInterval;
-      
-        function showSlide(index) {
-          colorSlides.forEach((slide, idx) => {
-            if (idx === index) {
-              slide.style.opacity = 1;
-              slide.style.transform = 'scale(1.1)';
-            } else {
-              slide.style.opacity = 0;
-              slide.style.transform = 'scale(1)';
-            }
-          });
-        }
-      
-        function changeSlide(direction) {
-          currentIndex += direction;
-          if (currentIndex < 0) {
-            currentIndex = colorSlides.length - 1;
-          } else if (currentIndex >= colorSlides.length) {
-            currentIndex = 0;
-          }
-          showSlide(currentIndex);
-        }
-      
-        leftArrow.addEventListener('click', () => {
-          clearInterval(autoChangeInterval);
-          changeSlide(-1);
-        });
-      
-        rightArrow.addEventListener('click', () => {
-          clearInterval(autoChangeInterval);
-          changeSlide(1);
-        });
-      
-        function autoChangeSlide() {
-          changeSlide(1);
-        }
-      
-        autoChangeInterval = setInterval(autoChangeSlide, 5000); // 5 seconds
-      </script>
-      
-      
+  const colorSlides = document.querySelectorAll('.color-slide');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+  let currentIndex = 0;
+  let autoChangeInterval;
+
+  function showSlide(index) {
+    colorSlides.forEach((slide, idx) => {
+      slide.style.opacity = idx === index ? 1 : 0;
+    });
+  }
+
+  function changeSlide(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) {
+      currentIndex = colorSlides.length - 1;
+    } else if (currentIndex >= colorSlides.length) {
+      currentIndex = 0;
+    }
+    showSlide(currentIndex);
+  }
+
+  leftArrow.addEventListener('click', () => {
+    clearInterval(autoChangeInterval);
+    changeSlide(-1);
+  });
+
+  rightArrow.addEventListener('click', () => {
+    clearInterval(autoChangeInterval);
+    changeSlide(1);
+  });
+
+  function autoChangeSlide() {
+    changeSlide(1);
+  }
+
+  autoChangeInterval = setInterval(autoChangeSlide, 5000); // 5 seconds
+</script>
+
       
 </body>
 </html>
