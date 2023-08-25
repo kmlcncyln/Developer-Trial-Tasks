@@ -2,5 +2,12 @@
 <html lang="en">
     <button id="button1"> Task1 </button>
     <button id="button1"> Task2 </button>
-    <script></script>
+    <script>
+        document.getElementById("button1").addEventListener("click", function(){
+            window.location.href = "task1/index.html";
+        });
+        document.getElementById("button2").addEventListener("click", function(){
+            window.location.href = "task2/index.html";
+        });
+    </script>
 </html>
