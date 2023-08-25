@@ -33,6 +33,16 @@
             </div>  
         </section>
         
+        <section class="single-frame-slider">
+          <div class="slider-frame">
+              <img src="https://www.arifoglu.com/Data/Blog/81.jpg?1527154757158" alt="Image 1">
+          </div>
+          <div class="slider-controls">
+              <button class="prev-button">Previous</button>
+              <button class="next-button">Next</button>
+          </div>
+      </section>
+
         <section class="pseudo-elements-section">
             <h2>Pseudo-Elements</h2> 
             <br>
@@ -107,6 +117,33 @@
   autoChangeInterval = setInterval(autoChangeSlide, 5000); // 5 seconds
 </script>
 
-      
+<script>
+  const prevButton = document.querySelector('.prev-button');
+  const nextButton = document.querySelector('.next-button');
+  const sliderFrame = document.querySelector('.slider-frame');
+  let currentIndexImage = 0;
+  const images = [
+      'https://www.arifoglu.com/Data/Blog/81.jpg?1527154757158',
+      'https://www.vivasanint.com/product/image/medium/z%20263_263.jpg',
+      'https://images.ctfassets.net/fbajyhawl1cz/7xnsQKPMS0MdQj02178HZx/c9714c02e8d28dcf409e5ba21a3a7471/grandpa-s-rose.jpeg?w=400&h=400&q=50&fm=webp',
+      'https://www.turkflowers.com.tr/buyukresim/Dubai-renkli-Laleler-B.jpg'
+  ];
+
+  function showSlide(index) {
+      currentIndexImage = index;
+      if (index < 0) {
+          currentIndexImage = images.length - 1;
+      } else if (index >= images.length) {
+          currentIndexImage = 0;
+      }
+      sliderFrame.innerHTML = `<img src="${images[currentIndexImage]}" alt="Image ${currentIndexImage + 1}">`;
+  }
+
+  prevButton.addEventListener('click', () => showSlide(currentIndexImage - 1));
+  nextButton.addEventListener('click', () => showSlide(currentIndexImage + 1));
+
+  showSlide(currentIndexImage);
+</script>
+          
 </body>
 </html>
